@@ -3,5 +3,7 @@
     <pages>
         <page name='EX_Closure'/>
         <page name='EX_Property'/>
+        <page name='EX_Controller'/>
+        <page name='EX_Enum'/>
     </pages>
 </playground>
