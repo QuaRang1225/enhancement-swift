@@ -3,6 +3,7 @@ import Darwin
 
 //클로저 - 익명함수
 //클로저 안에 이름이 있는 메서드와 없는 메서드가 있는데 보통 이름이 없는 메서드를 클로저라고 부름
+
 let closure = {print("안녕하살법")}  //프로퍼티안에 저장가능
 closure()
 
@@ -109,5 +110,13 @@ sub(print(5-1))   //클로저로 만들어져도 일반 구문 또는 함수도 
 //  print(5-1)
 //})
 
+func canOptinal(sentence:(()->Void)? = nil){
+    print("못불러옵니다")
+    sentence?()
+}
+//옵셔널로 선언할 경우에 클로저를 호출할수도 있고 안할 수도 있음
+canOptinal()
 
-
+canOptinal{
+    print("하지만 불러 올수도 있습니다")
+}

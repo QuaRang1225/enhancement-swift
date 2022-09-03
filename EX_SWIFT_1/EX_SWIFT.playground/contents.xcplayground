@@ -6,5 +6,12 @@
         <page name='EX_Controller'/>
         <page name='EX_Enum'/>
         <page name='EX_Optiional'/>
+        <page name='EX_ClassStruct'/>
+        <page name='EX_Observer'/>
+        <page name='EX_Generic'/>
+        <page name='EX_Initializeer'/>
+        <page name='EX_Inheritance'/>
+        <page name='EX_Dictionary'/>
+        <page name='EX_Inout'/>
     </pages>
 </playground>

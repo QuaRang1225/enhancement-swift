@@ -19,14 +19,17 @@ let numVal = val ?? 30  //변수 안에 값이 nil일 경우 값을 넣어줌
 print(numVal)
 
 var fristVal:Int? = 11
+var secondVal:Int? = nil
 
 func unWrap(_ param: Int?){
     guard let unwrapVal = param else{
+        print("참이 아님")
         return
     }
     print(unwrapVal)
 }
 unWrap(fristVal)
+unWrap(secondVal)
 
 
 //옵셔널 체이닝 - 옵셔널을 사슬처럼 연달아서 사용하는 것
@@ -44,15 +47,22 @@ struct Student {
         info = Information(grade  : grade, major : major)
     }
 }
-var my : Student? = Student("콰랑", 1, "스위프트학과")
+var quarang : Student? = Student("콰랑", 1, "스위프트학과")
 //변수를 옵셔널로 선언한 후 구조체 저장
 
 //my = nil
-if let myname = my?.name, let myinfo = my?.info{
+if let myname = quarang?.name, let myinfo = quarang?.info{
     print("나는 \(myinfo.grade)학년 \(myinfo.major) \(myname)입니다.")
 }else{
     print("존재하지 않는 학생입니다.")
 }
+
+var readText = readLine()!
+var setText = readText.components(separatedBy: " ")
+
+var a = Int(setText[0])!
+var b = Int(setText[1])!
+print(a - b)
 
 
 
