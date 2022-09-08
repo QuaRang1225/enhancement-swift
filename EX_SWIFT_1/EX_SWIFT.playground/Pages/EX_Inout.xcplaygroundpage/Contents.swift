@@ -38,3 +38,17 @@ swap(&a,&b)
 //1. 함수가 호출되면, 매개변수로 넘겨진 변수가 복사된다.
 //2. 함수 몸체에서, 복사한 값을 수정한다.
 //3. 함수가 반환될 때, 변화된 값을 원본 변수에 재할당한다.
+
+var str2 = """
+This goes \
+over multiple \
+lines
+"""
+var burns = """
+The best laid schemes
+O’ mice and men
+Gang aft agley
+"""
+
+print(str2)
+print(burns)

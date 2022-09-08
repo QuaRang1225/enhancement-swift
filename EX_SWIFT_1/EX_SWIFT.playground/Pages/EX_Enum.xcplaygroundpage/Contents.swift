@@ -10,17 +10,22 @@ enum Rainbow{           //스위프트의 열거형은 case별로 값을 할당�
     case red,orange,yellow,green,blue,indigo,purple
 }
 var FavoriteColor = Rainbow.red
-FavoriteColor = .indigo     //위에서 선언 시 enum의 red로 최고하 했기 때문에 타입 추론으로 인하여 .indigo만 사용해도 가능
+FavoriteColor = .indigo     //위에서 선언 시 enum의 red로 초기화 했기 때문에 타입 추론으로 인하여 .indigo만 사용해도 가능
 print("가장좋아하는 색은 \(FavoriteColor)")
 
 enum Num:Int{
-    case first = 1,second = 2,thrid = 3
+    case first = 1,second ,thrid
 }
 
-let ColorNum = Num.first.rawValue               //rawValue를 적어야 enum의 값을 출력할 수 있음
-print("\(FavoriteColor)는 \(ColorNum)번째 색껄이다")
+let ColorNum = Num.second.rawValue               //rawValue를 적어야 enum의 값을 출력할 수 있음
+print("\(FavoriteColor)는 \(ColorNum)번째 색깔이다")
 let color = Num(rawValue: 3)        //3을 가진 값을 저장 가능   //값이 없을 경우 nil이 저장됨
 print(color!)
+
+enum pNum:Double{
+    case first = 1.0,second = 2.0 ,thrid = 3, four
+}
+print(pNum.four.rawValue)
 
 enum RainbowTranslation {       //함수형 enum
     case red(name: String)
@@ -64,10 +69,10 @@ enum Calculate {
     indirect case add(Calculate,Calculate)                  //만약 모든 열거형 맴버가 재귀열거자면 enum선언 때 indirect 사용 가능
     indirect case division(Calculate,Calculate)             //ex? enum indirect calculate{}
 }
-let num1 = Calculate.num(6)
-let num2 = Calculate.num(4)
+let num1 = Calculate.num(30)
+let num2 = Calculate.num(6)
 let sum = Calculate.add(num1,num2)
-let result = Calculate.division(sum,Calculate.num(2))
+let result = Calculate.division(sum,Calculate.num(6))
 
 func Cal(_ operation:Calculate)->Int{           //_를 사용하면 맴버이름 사용안 할 수 있음
     switch operation{

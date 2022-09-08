@@ -13,5 +13,8 @@
         <page name='EX_Inheritance'/>
         <page name='EX_Dictionary'/>
         <page name='EX_Inout'/>
+        <page name='EX_Error'/>
+        <page name='EX_Lazy'/>
+        <page name='EX_ComputedProperty '/>
     </pages>
 </playground>
