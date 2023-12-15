@@ -7,7 +7,7 @@ struct Info {
     var age: Int = 24
 }
  
-let myInfo: Info = Info(name: "콰랑", age: 24)
+//let myInfo: Info = Info(name: "콰랑", age: 24)
  
 class YourInfo {
     lazy var myinfo: Info = Info()

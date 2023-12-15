@@ -16,5 +16,9 @@
         <page name='EX_Error'/>
         <page name='EX_Lazy'/>
         <page name='EX_ComputedProperty '/>
+        <page name='EX_typeProperty'/>
+        <page name='EX_Method'/>
+        <page name='EX_Subscript'/>
+        <page name='EX_Extension'/>
     </pages>
 </playground>

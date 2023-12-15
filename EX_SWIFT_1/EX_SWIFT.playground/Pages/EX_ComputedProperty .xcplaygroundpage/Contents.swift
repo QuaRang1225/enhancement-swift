@@ -5,7 +5,7 @@ import Foundation
 struct Grade{
     var num:Int = 1
     
-    var trans:Grade{
+    var trans:Grade{    //타입을 지정하지 않으면 에러가 남
         get{
             return Grade(num:num+7)
         }
