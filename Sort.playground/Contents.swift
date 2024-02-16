@@ -9,15 +9,27 @@ var sortedArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 //MARK: 버블정렬 알고리즘 시간복잡도 : O(N^2)
 func bubbleSort(_ array:inout [Int]){
     
+//    let n = array.count
+//    var isSwap = false
+//    guard n > 1 else {return}
+//    for i in 0..<(n-1){
+//        for j in 0..<(n-1 - i){
+//            if array[j] > array[j + 1]{
+//                array.swapAt(j, j+1)
+//                isSwap = true
+//                swapCount += 1
+//            }
+//        }
+//        guard !isSwap else {return}
+//    }
     let n = array.count
     var isSwap = false
-    guard n > 1 else {return}
-    for i in 0..<n{
-        for j in 0..<(n-1 - i){
-            if array[j] > array[j + 1]{
+    guard n > 1 else{ return }
+    for i in 0..<n-1{
+        for j in 0..<(n-1)-i{
+            if array[j] > array[j+1]{
                 array.swapAt(j, j+1)
                 isSwap = true
-                swapCount += 1
             }
         }
         guard !isSwap else {return}
@@ -33,17 +45,28 @@ func bubbleSort(_ array:inout [Int]){
 //MARK: 선택정렬 알고리즘 시간복잡도 : O(N^2)
 func selectSort(_ array:inout [Int]){
     
+//    let n = array.count
+//    guard n > 1 else {return}
+//    for i in 0..<(n-1){
+//        var min = i
+//        for j in (i+1)..<n{
+//            if array[min] > array[j]{
+//                min = j
+//            }
+//            swapCount += 1
+//        }
+//        array.swapAt(min, i)
+//    }
     let n = array.count
     guard n > 1 else {return}
-    for i in 0..<(n-1){
-        var min = i
+    for i in 0..<n-1{
+        var stand = i
         for j in (i+1)..<n{
-            if array[min] > array[j]{
-                min = j
+            if array[stand] > array[j]{
+                stand = j
             }
-            swapCount += 1
         }
-        array.swapAt(min, i)
+        array.swapAt(i, stand)
     }
 }
 
@@ -54,20 +77,37 @@ func selectSort(_ array:inout [Int]){
 
 //MARK: 삽입 정렬 알고리즘 시간복잡도 : O(N^2)
 func insertSrot(_ array:inout [Int]){
+//    let n = array.count
+//    guard n > 1 else {return}
+//    for i in 1..<n{
+//        for j in stride(from: i, to: 0, by: -1){
+//            if array[j] < array[j-1]{
+//                array.swapAt(j, j-1)
+//                swapCount += 1
+//            }else{
+//                break
+//            }
+//        }
+//    }
     let n = array.count
     guard n > 1 else {return}
     for i in 1..<n{
         for j in stride(from: i, to: 0, by: -1){
             if array[j] < array[j-1]{
                 array.swapAt(j, j-1)
-                swapCount += 1
-            }else{
-                break
             }
         }
     }
 }
 
-insertSrot(&array)
-print(array)
-print(swapCount)
+//insertSrot(&array)
+//print(array)
+//print(swapCount)
+
+//MARK: 재귀함수 시간복잡도 O(N)
+func factorial(_ value:Int) -> Int{
+    guard value > 2 else { return value}
+    return (value * factorial(value - 1))
+}
+
+print(factorial(3))
