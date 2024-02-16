@@ -23,9 +23,31 @@ func bubbleSort(_ array:inout [Int]){
         guard !isSwap else {return}
     }
 }
-bubbleSort(&sortedArray)
-print(sortedArray)
+//bubbleSort(&sortedArray)
+//print(sortedArray)
+//print(swapCount)
+
+
+
+
+//MARK: 선택정렬 알고리즘 시간복잡도 : O(N^2)
+func selectSort(_ array:inout [Int]){
+    
+    let n = array.count
+    guard n > 1 else {return}
+    for i in 0..<(n-1){
+        var min = i
+        for j in (i+1)..<n{
+            if array[min] > array[j]{
+                min = j
+                continue    // 만약 작은 값을 찾았을 경우 중단하고 순서를 넘기기 위함
+            }
+            swapCount += 1
+        }
+        array.swapAt(min, i)
+    }
+}
+
+selectSort(&array)
+print(array)
 print(swapCount)
-
-
-
