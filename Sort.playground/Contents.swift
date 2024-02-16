@@ -40,7 +40,6 @@ func selectSort(_ array:inout [Int]){
         for j in (i+1)..<n{
             if array[min] > array[j]{
                 min = j
-                continue    // 만약 작은 값을 찾았을 경우 중단하고 순서를 넘기기 위함
             }
             swapCount += 1
         }
@@ -48,6 +47,27 @@ func selectSort(_ array:inout [Int]){
     }
 }
 
-selectSort(&array)
+//selectSort(&array)
+//print(array)
+//print(swapCount)
+
+
+//MARK: 삽입 정렬 알고리즘 시간복잡도 : O(N^2)
+func insertSrot(_ array:inout [Int]){
+    let n = array.count
+    guard n > 1 else {return}
+    for i in 1..<n{
+        for j in stride(from: i, to: 0, by: -1){
+            if array[j] < array[j-1]{
+                array.swapAt(j, j-1)
+                swapCount += 1
+            }else{
+                break
+            }
+        }
+    }
+}
+
+insertSrot(&array)
 print(array)
 print(swapCount)
