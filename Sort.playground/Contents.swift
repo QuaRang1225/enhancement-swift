@@ -145,6 +145,7 @@ func fibo(_ value:Int) -> Int{
 
 //print(fibo(7))
 
+//MARK: 합병정렬 시간복잡도 - O(N)
 func mergeSort(_ array:[Int]) -> [Int]{
     guard array.count > 1 else {return array}
     
