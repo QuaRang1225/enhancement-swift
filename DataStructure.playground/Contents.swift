@@ -55,12 +55,25 @@ struct Queue<T>{
     }
 }
 
-var queue = Queue<Int>()
-print(queue.count)
-print(queue.isEmpty)
-queue.enQueue(3)
-print(queue.queue)
-queue.enQueue(6)
-print(queue.queue)
-print(queue.dequeue())
-print(queue.queue)
+//var queue = Queue<Int>()
+//print(queue.count)
+//print(queue.isEmpty)
+//queue.enQueue(3)
+//print(queue.queue)
+//queue.enQueue(6)
+//print(queue.queue)
+//print(queue.dequeue())
+//print(queue.queue)
+
+//MARK: 노드 생성
+class Node<T>{
+    var data:T?
+    var next:Node?
+    init(data: T? = nil, next: Node? = nil) {
+        self.data = data
+        self.next = next
+    }
+}
+
+
+
