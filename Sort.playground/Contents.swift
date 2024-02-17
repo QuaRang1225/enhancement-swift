@@ -110,4 +110,16 @@ func factorial(_ value:Int) -> Int{
     return (value * factorial(value - 1))
 }
 
-print(factorial(3))
+//print(factorial(3))
+
+
+//MARK: 퀵정렬 시간복잡도 O(N) - 만약 피벗이 항상 배열중 가장 크거나 작을 경우 O(N^2)
+func quickSort(_ array: inout [Int]) -> [Int]{
+    guard let first = array.first,array.count > 1 else {return array}
+    
+    var previous = array.filter{$0 < first}
+    var after = array.filter{$0 > first}
+    return quickSort(&previous) + [first] + quickSort(&after)
+}
+
+print(quickSort(&array))
