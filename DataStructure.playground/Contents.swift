@@ -79,6 +79,7 @@ class Node<T>{
 class LinkedList<T>{
     var head:Node<T>?
     
+    //MARK: 리스트 마지막에 노드 추가
     func append(_ data:T){
         //헤더가 없을 경우 해당 노트가 헤더가 됨
         if head == nil{
@@ -93,6 +94,30 @@ class LinkedList<T>{
         }
         //node.next가 nil인게 확인 후 데이터를 추가
         node?.next = Node(data: data)
+    }
+    
+    //MARK: 리스트 중간에 노드 추가
+    func insert(_ data:T,index:Int){
+        //헤더가 없을 경우 해당 노트가 헤더가 됨
+        if head == nil{
+            head = Node(data:data)
+            return
+        }
+        //검색을 하기 위해서 헤드부터 검색을 해야하기 때문에 노드에 헤드를 저장
+        var node = head
+        //특정 인덱스를 찾을때까지 루프를 돌리다 추가하려는 노드의 전까지 루프(해당 인덱스에 추가하려는 것이기 때문에 그 전노드까지 조건을 검)
+        for _ in 0..<index-1{
+            //만약 해당 노드의 next가 비어있을경우 마지막 노드이기 때문에 루프를 더이상 돌릴수 없음
+            if node?.next == nil {break}
+            node = node?.next
+        }
+        //노드의 next를 임시저장
+        let newNode = node?.next
+        //노드의 next에 새로운 데이터 저장
+        node?.next = Node(data: data)
+        //노트의 next.net에 기존next값을 저장
+        node?.next?.next = newNode
+        
     }
 }
 
