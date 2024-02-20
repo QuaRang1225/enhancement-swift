@@ -177,4 +177,16 @@ while node != nil{
     node = node?.next
 }
 
-print(list.search(3)?.data)
+//print(list.search(3)?.data)
+
+class BSTNode<T:Comparable>{
+    var data: T
+    var left: BSTNode?
+    var right: BSTNode?
+    
+    init(data: T) {
+        self.data = data
+    }
+}
+
+
