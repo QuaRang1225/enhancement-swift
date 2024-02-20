@@ -76,7 +76,7 @@ class Node<T>{
 }
 
 //MARK: 링크드 리스트 생성
-class LinkedList<T>{
+class LinkedList<T:Equatable>{
     var head:Node<T>?
     
     //MARK: 리스트 마지막에 노드 추가
@@ -150,6 +150,17 @@ class LinkedList<T>{
         }
         node?.next = node?.next?.next
     }
+    //MARK: 리스트 검색
+    func search(_ data:T) -> Node<T>?{
+        guard head != nil else {return nil}
+        
+        var node = head
+        while node?.next != nil {
+            if node?.data == data {break}
+            node = node?.next
+        }
+        return node
+    }
 }
 
 var list = LinkedList<Int>()
@@ -158,10 +169,12 @@ list.append(2)
 list.append(3)
 list.append(4)
 
-list.remove(2)
+//list.remove(2)
 
 var node = list.head
 while node != nil{
     print(node?.data ?? -1)
     node = node?.next
 }
+
+print(list.search(3)?.data)
