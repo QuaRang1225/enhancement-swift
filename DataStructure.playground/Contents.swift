@@ -119,5 +119,22 @@ class LinkedList<T>{
         node?.next?.next = newNode
         
     }
+    //MARK: 리스트 마지막 노드 삭제
+    func removeLast(){
+        // 헤더가 nil일경우 삭제할 노드가 없기에 반환
+        if head == nil {return}
+        //헤더하나 밖에 없을 경우 헤더 삭제
+        if head?.next == nil{
+            head = nil
+            return
+        }
+        //마지막 노드의 전단계 까지 반복
+        var node = head
+        while node?.next != nil{
+            node = node?.next
+        }
+        //현재 헤더의 다음 노드 nil로 삭제
+        node?.next = nil
+    }
 }
 
