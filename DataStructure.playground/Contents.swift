@@ -136,5 +136,32 @@ class LinkedList<T>{
         //현재 헤더의 다음 노드 nil로 삭제
         node?.next = nil
     }
+    //MARK: 리스트 중간 노드 삭제
+    func remove(_ index:Int){
+        if head == nil {return}
+        if head?.next == nil{
+            head = nil
+            return
+        }
+        var node = head
+        for _ in 0..<index-1{
+            if node?.next?.next == nil {break}
+            node = node?.next
+        }
+        node?.next = node?.next?.next
+    }
 }
 
+var list = LinkedList<Int>()
+list.append(1)
+list.append(2)
+list.append(3)
+list.append(4)
+
+list.remove(2)
+
+var node = list.head
+while node != nil{
+    print(node?.data ?? -1)
+    node = node?.next
+}
