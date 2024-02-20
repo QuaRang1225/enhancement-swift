@@ -189,4 +189,24 @@ class BSTNode<T:Comparable>{
     }
 }
 
-
+class BinarySearchTree<T:Comparable>{
+    var root:BSTNode<T>?
+    func insert(_ data:T){
+        guard let root else {return self.root = BSTNode(data: data)}
+        
+        var node = root
+        while true{
+            if data < node.data{
+                guard let next = node.left else {
+                    return node.left = BSTNode(data: data)
+                }
+                node = next
+            }else{
+                guard let next = node.right else {
+                    return node.right = BSTNode(data: data)
+                }
+                node = next
+            }
+        }
+    }
+}
