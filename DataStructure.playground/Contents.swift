@@ -163,19 +163,19 @@ class LinkedList<T:Equatable>{
     }
 }
 
-var list = LinkedList<Int>()
-list.append(1)
-list.append(2)
-list.append(3)
-list.append(4)
-
+//var list = LinkedList<Int>()
+//list.append(1)
+//list.append(2)
+//list.append(3)
+//list.append(4)
+//
 //list.remove(2)
-
-var node = list.head
-while node != nil{
-    print(node?.data ?? -1)
-    node = node?.next
-}
+//
+//var node = list.head
+//while node != nil{
+//    print(node?.data ?? -1)
+//    node = node?.next
+//}
 
 //print(list.search(3)?.data)
 
@@ -209,7 +209,7 @@ class BinarySearchTree<T:Comparable>{
             }
         }
     }
-    private func diagram(for node: BSTNode<T>?,
+    func diagram(for node: BSTNode<T>?,
                          _ top: String = "",
                          _ root: String = "",
                          _ bottom: String = "") -> String {
@@ -224,3 +224,13 @@ class BinarySearchTree<T:Comparable>{
             + diagram(for: node.left, bottom + "│ ", bottom + "└──", bottom + " ")
     }
 }
+
+let bst = BinarySearchTree<Int>()
+bst.insert(30)
+bst.insert(20)
+bst.insert(43)
+bst.insert(12)
+bst.insert(1)
+bst.insert(61)
+
+print(bst.diagram(for: bst.root))
